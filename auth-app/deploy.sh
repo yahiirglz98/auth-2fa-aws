@@ -9,9 +9,9 @@
 #
 # ANTES DE EJECUTAR edita estas variables:
 
-PEM_FILE="tu-archivo.pem"          # Ruta a tu archivo .pem
-EC2_IP="0.0.0.0"                   # IP pública de tu instancia EC2
-EC2_USER="ec2-user"                # Usuario: ec2-user (Amazon Linux) | ubuntu (Ubuntu)
+PEM_FILE="/c/Users/chomi/OneDrive/Documentos/proyecto010626flames/autikey.pem" # Ruta a tu archivo .pem
+EC2_IP="52.14.143.227"                   # IP pública de tu instancia EC2
+EC2_USER="ubuntu"          # Usuario: ec2-user (Amazon Linux) | ubuntu (Ubuntu)
 
 # ──────────────────────────────────────────────
 
