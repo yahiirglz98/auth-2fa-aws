@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Auth2FA</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="card" style="max-width:480px;">
+    <div class="dashboard-header">
+      <div class="logo" style="margin-bottom:0;">
+        <div class="logo-icon">🔐</div>
+        <span class="logo-text">Auth2FA</span>
+      </div>
+      <a href="/logout" class="logout-btn">Salir</a>
+    </div>
+
+    <div class="badge">✅ Sesión verificada con 2FA</div>
+
+    <hr class="divider">
+
+    <h1 style="font-size:20px; margin-bottom:4px;">¡Hola, <%= username %>! 👋</h1>
+    <p class="subtitle">Accediste correctamente con autenticación de dos factores.</p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">Autenticación</div>
+        <div class="value">✓ 2FA activo</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Tipo</div>
+        <div class="value">TOTP</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Algoritmo</div>
+        <div class="value">HMAC-SHA1</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Logins totales</div>
+        <div class="value"><%= loginCount %></div>
+      </div>
+      <div class="info-card">
+        <div class="label">Miembro desde</div>
+        <div class="value"><%= memberSince %></div>
+      </div>
+      <div class="info-card">
+        <div class="label">Códigos respaldo</div>
+        <div class="value" style="color: <%= backupCodesLeft <= 2 ? 'var(--error)' : 'var(--success)' %>">
+          <%= backupCodesLeft %>/8 restantes
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <p style="font-size:13px; color:var(--muted); text-align:center;">
+      🎓 Práctica de autenticación — Desplegado en AWS EC2
+    </p>
+  </div>
+</body>
+</html>

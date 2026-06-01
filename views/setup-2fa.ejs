@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurar 2FA — Auth2FA</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="card" style="max-width:460px;">
+    <div class="logo">
+      <div class="logo-icon">🔐</div>
+      <span class="logo-text">Auth2FA</span>
+    </div>
+
+    <h1>Configura tu 2FA</h1>
+    <p class="subtitle">Escanea el QR con tu app autenticadora</p>
+
+    <div class="qr-wrap">
+      <img src="<%= qrUrl %>" alt="QR Code para configurar 2FA">
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <span>Descarga <strong>Google Authenticator</strong> o <strong>Authy</strong></span>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <span>Toca "Agregar cuenta" y escanea el código QR</span>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <span>O ingresa manualmente esta clave secreta:</span>
+      </div>
+    </div>
+
+    <div class="secret-box"><%= secret %></div>
+
+    <hr class="divider">
+
+    <!-- Códigos de respaldo -->
+    <div class="backup-section">
+      <div class="backup-header">
+        <span class="backup-icon">🛡️</span>
+        <div>
+          <strong>Códigos de respaldo</strong>
+          <p style="font-size:12px; color:var(--muted); margin-top:2px;">
+            Úsalos si pierdes acceso a tu app. Cada código funciona una sola vez.
+          </p>
+        </div>
+      </div>
+
+      <div class="backup-grid">
+        <% backupCodes.forEach(code => { %>
+          <div class="backup-code"><%= code %></div>
+        <% }) %>
+      </div>
+
+      <div class="backup-warning">
+        ⚠️ <strong>Guárdalos ahora.</strong> No podrás verlos de nuevo.
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <a href="/login" class="btn" style="display:block; text-align:center; text-decoration:none;">
+      Ya escaneé el QR — Ir al Login →
+    </a>
+  </div>
+</body>
+</html>
