@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurar 2FA — Auth2FA</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <div class="logo-icon">🔐</div>
+      <span class="logo-text">Auth2FA</span>
+    </div>
+
+    <h1>Configura tu 2FA</h1>
+    <p class="subtitle">Escanea el código QR con tu app</p>
+
+    <div class="qr-wrap">
+      <img src="<%= qrUrl %>" alt="QR Code">
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <span>Descarga <strong>Google Authenticator</strong> o <strong>Authy</strong> en tu celular</span>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <span>Toca "Agregar cuenta" y escanea el QR de arriba</span>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <span>O ingresa manualmente esta clave secreta:</span>
+      </div>
+    </div>
+
+    <div class="secret-box"><%= secret %></div>
+
+    <hr class="divider">
+
+    <p style="font-size:13px; color: var(--muted); margin-bottom: 16px; text-align:center;">
+      ¡Listo! Ahora inicia sesión y usa el código de 6 dígitos que genera la app.
+    </p>
+
+    <a href="/login" class="btn" style="display:block; text-align:center; text-decoration:none;">
+      Ir al Login →
+    </a>
+  </div>
+</body>
+</html>

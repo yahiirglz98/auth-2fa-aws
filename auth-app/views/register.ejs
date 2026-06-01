@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro — Auth2FA</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <div class="logo-icon">🔐</div>
+      <span class="logo-text">Auth2FA</span>
+    </div>
+
+    <h1>Crear cuenta</h1>
+    <p class="subtitle">Regístrate y configura tu 2FA</p>
+
+    <% if (error) { %>
+      <div class="error-box">⚠️ <%= error %></div>
+    <% } %>
+
+    <form method="POST" action="/register">
+      <div class="form-group">
+        <label>Usuario</label>
+        <input type="text" name="username" placeholder="tu_usuario" autocomplete="off" required>
+      </div>
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" name="password" placeholder="Mínimo 6 caracteres" required>
+      </div>
+      <button class="btn" type="submit">Crear cuenta →</button>
+    </form>
+
+    <div class="link-row">
+      ¿Ya tienes cuenta? <a href="/login">Inicia sesión</a>
+    </div>
+  </div>
+</body>
+</html>
